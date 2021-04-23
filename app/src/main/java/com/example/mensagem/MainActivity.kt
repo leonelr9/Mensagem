@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,8 +22,11 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+        //Todo: Obter a data e a hora do sistema
+
         val intent = Intent(this, MostraMensagemActivity::class.java)
         intent.putExtra(INFO_EXTRA_MENSAGEM, mensagem)
+        //Todo: Passar a informação Data/Hora para a atividade mostraMensgaem
 
         startActivity(intent)
     }
