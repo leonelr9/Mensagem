@@ -23,15 +23,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Todo: Obter a data e a hora do sistema
+        val dataHora = Calendar.getInstance().time.toString()
+
 
         val intent = Intent(this, MostraMensagemActivity::class.java)
         intent.putExtra(INFO_EXTRA_MENSAGEM, mensagem)
         //Todo: Passar a informação Data/Hora para a atividade mostraMensgaem
+        intent.putExtra(Companion.DATA_HORA, dataHora)
 
         startActivity(intent)
     }
 
     companion object {
         const val INFO_EXTRA_MENSAGEM = "MENSAGEM"
+        const val DATA_HORA = "Data/Hora"
     }
 }
